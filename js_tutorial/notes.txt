@@ -358,6 +358,7 @@ Arrays and Loops
 - its a list of values
 - its zero indexed in JS as well
 - use [] to denote is an array!
+- to declare an empty array, just do const array=[];
 - An array in JS can hold ANY value (just like python)
   - this includes objects as well (and other arrays)
 - An array is a value (as we know 2d arrays)
@@ -378,6 +379,7 @@ Arrays and Loops
         - from the first index, to the second index but not including
       - so (0,4) will get rid of array values [0]-[3]
       - (0,1) will get rid of the first value
+ - Remember, in order to use DOM, your html element needs a class tag to it
 
 
 
