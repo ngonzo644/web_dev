@@ -1,0 +1,392 @@
+What is javascript?
+- used to create websites!
+- How a website is interactive!
+- This is used in conjunction with HTML CSS and javascript
+- HTML creates all the content, CSS changes the appearance,
+and JS makes it interactive!
+
+- alert('hello');
+  - This will create a popup with the desired message
+- document.body.innerHTML = 'hello';
+  - This will remove everything from the page, and replace it with whatever
+  is inside ''
+  
+  Math
+  - everything is the same
+  - follows pemdas ofc
+  - Like most programming languages, decimal values (floats/doubles) sometimes
+  add up weirdly, so a good practice (especially when handling money) is to
+  calculate the numbers as if they weren't decimal values (ie 30.21 is 3021).
+  Surround this calculation in () to give it priority, and divide it by 100
+  to make it an accurate decimal (float/double) value!
+  - To round up/down a number, we can use Math.round(value)
+  - So a good combo is to surround the whole number calculation in Math.round()
+  and then divide this by 100 to get the cents.
+
+Strings
+- String concatenation works here ofc.
+- This includes other primitive variable types, so you can concatenate an int 
+onto a string. This is known as type coercion (automatic type conversion)
+- escape characters are the same 
+- You can create a string with ``, and these are called template strings.
+You can use interpolation, meaning we can insert a value directly into it.
+This is the exact same as f strings, however we use ${value} whenever we want
+to directly put in a value into the string.
+example : `I am ${age} years old`
+
+How to use html css and js together?
+well lets go over html and css first!
+
+the title attribute in html allows us to create a tool tip
+<div title="tooltip">
+
+start every html webpage with <!DOCTYPE html> and have everything surrounded
+by <html></html> and split it up into two sections <head> and <body>
+<head> contains things that aren't visible on the webpage, and <body> contains
+everything that is visible on the page.
+
+Remember, you can separate a css and html file to make 
+things cleaner by using a <link> element in the head
+example:
+<link rel="stylesheet" href"styles/name.css">
+
+How to run js in an html file?
+we know css can be used with the <style> element, similarly, js can be used with the <script> element!
+Add this element within you <body> element, and start writing some js code within <script>!
+There is also another way to run js code within an html file, and that is by using the onclick="" attribute in a html tag. Essentially, if you click on this element, the js code within this attribute will run.
+
+How to comment in js? //
+To comment multiple lines? /* */ same as java
+
+Basic JavaScript Tutorial !
+  - How to print to the console?
+    - console.log();
+      - This will display whatever is inside the brackets, just look at the console in inspect element.
+  - What is a variable (and how to create on)?
+    - container of memory (we know this)
+    - the keyword let allows us to create a variable.
+      - ex : let var_1 = 14;
+    - js requires semicolons at the end!
+    - Like python, js doesn't require specification of data type
+    - Also, semicolons are NOT required, as js automatically adds one if not seen. However, this may cause issues, so its good practice to just add one anyways to the end of every statement.
+    - You can use += (yay)
+  - Remember how we can use onclick="" in an html tag to write js code, well if we define a variable within the <script> tag, we can then make any updates we want to it whenever a button is interacted with. Look at cart(js) example.
+Different ways to declare a variable
+  - const <name> // This makes it so that the variable cannot be changed later, similar to FINAL in java.
+  - var <name> // This creates a variable, just like let, and was the original way to create a variable in js. Var, however, has some issues. That is why we used let, instead of var.
+  - let <name> // da goat 
+We can use typeof <var> to see/print the type of a variable.
+
+Booleans and if-statements
+- Booleans as we know are true or false
+- To create a boolean, we can either use a comparison or set it to a variable using let.
+- Js is special however, since there are === (triple equals). Essentially, what this does is it compares the two values without type casting. == in JS type casts both values, meaning 5 and '5' are equal to each other. That is why we should always use === along with !==.
+- An if-statement is the same as any programming language if(condition){}. Else is also the same, if (condition){} else {}. Else is ofc optional.
+- We can have more than one condition using else if(){}.
+- All logical comparisons are the same (like java)
+
+Scope
+- You know what it is, avoid it by making variables in global scope.
+
+Random in js.
+- Math.random(); This generates a random num between 0 and 1. 
+- TO get a number between two values (similar in java), you have to do Math.round(Math.random() * (max-min) + min); You add min because its exclusive without it (doesn't give min value). Also use Math.round to round the float to the nearest int.
+
+Functions in js (super ez)
+- function <function_name> (arguments)
+- because you don't have to define the variable type at compilation, you don't have to define the argument's type either. It all depends on what is passed through.
+- You don't have to specify the return type either, it can either do nothing or return something.
+
+tips
+- declare any variables you're gonna use in the onclick into the <script>. Declare any functions in the script as well. 
+
+Truthy and Falsy values
+- if conditions work with any value, not just true/false.
+- 0, ''(empty string), NaN (not a number(invalid math)), undefined (something doesn't have a value (only works with let)), and null (undeclared object/function) are all false, or falsy.
+- Any other non-zero number is considered true, or truthy.
+
+Shortcuts for if-statements
+-  Ternary operator :
+  - <condition> ? <true_statement> : <false_statement>;
+  - You can save a ternary operator's result into a variable.
+  - Example:
+    - let example = x>y ? b : c ;
+    - if x>y is true, example=b;
+    - if x>y is false, example=c;
+- Guard operator
+  - we know how && short circuits if the first condition is false (doesn't check the other condition).
+  - So we can utilize this, and it is known as the guard operator.
+  - Once again, we can save the result into a variable.
+  - If the first condition is false, the first condition will be saved into the variable.
+  - If the first and second condition(s) are true, the second condition is saved into the variable.
+  - Example:
+    - let example = x && y;
+    - if x is false, example = x;
+    - if x and y are true, example = y;
+- Default operator
+  - This is the same thing but now with the || operator (or)
+  - If the lest side is true, the left condition will be saved into a variable.
+  - If the right side is true, the right condition will be saved into a variable
+  - Example:
+    - let example = x || y;
+    - if x is true, example=x;
+    - if y is true, example=y;
+
+Objects
+- you know what they are (instances of a class)
+- Use whenever you know you will have multiple of a certain item with unique attributes, but still the same overall thing.
+- In js, they let you group values together (essentially)
+- Declare an object just like creating a variable (using const), however, set it equal to {}, and within these curly braces are values/functions unique to this specific object. 
+- create a unique var by doing <var>: <value>,. Separate each value by using a comma, not a semicolon. This is known as a property value pair.
+- Accessing values from an object is the same, <object>.<var>; (idk if private vars exist yet).
+- changing values is the same, just do <object>.<var> = ;
+- You can also add new values by just doing <object>.<new_var> = <value>;
+- You can remove a value from an object by doing delete <object>.<var>;
+- An object in js is just another type of value. (The type is literally an object)
+- Objects obviously make our code more organized. Prevents us from repeating code, and allows us to group attributes together.
+- For example, things belonging to a certain thing should be grouped in an object.
+- const <name> = {attributes: };
+
+Accessing variables within an object.
+  - In JS, there is an easy way to access an objects attributes using bracket notation.
+  - Ex: <object_name>[<name_of_var>]; will give you the value within the [].
+  - When do we use this?
+    - allows us to access properties that aren't accessible with the dot notation.
+    - Example: names of attributes that are case sensitive (has chars with special characters).
+    - <object>.num-1; will return an error because it thinks the '-' is subtraction, not a part of its name. 
+    - It also allows us to add values to objects!
+      - []: <value>
+      - inside the brackets can be strings, int's, etc etc.
+      - Actually, the brackets aren't required at all when creating a new attribute.
+      - You could do 'name' : value , and it would create a new var of the type given with the name from 'name'. 
+  - By default, we should always use the dot notation for simplicity, however, for cases that it doesn't work, use [].
+  - You can save ANY data type in an object, even objects within objects (to be even more specific in organizing attributes)
+    - This is known as a nested object, and it simply just makes things more organized.
+  - To access a nested object, just use the dot notation multiple times
+    - <object>.<object>.<attribute>
+  - Of course, you can also put a function within an object!
+    - How to declare 
+      - <name_of_attribute> : function <name> () {}
+      - attributes can hold ANY data type, so you can name it anything and have anything within it, including functions and other objects.
+      - to call the object, simply just do object.<name_of_attribute>();
+      - typically just use fun : function <name>() {}
+  - Remember to separate everything with commas within an object, not semicolons.
+  - A function within an object is a method (duh)
+
+Built-in Objects
+- Math and Console are examples of built-in objects.
+- There are two other big ones provided by JS:
+  - JSON
+  - localStorage
+- JSON (JavaScript Object Notation)
+  - A syntax, like JS, that holds data (VERY similar to JS object notation).
+  - JSON does NOT support functions
+  - Kinda looks like this:
+    - {
+      "data" : "whats up " , 
+      "image" : "a sunset" ,
+      "rating": {
+        "stars": 4.5,
+        "count": 87
+      }
+      }
+  - I've worked with this before, ik what a JSON is
+  - JS object notation is only understood in JS, but JSON is used universally (as we know)
+  - Its used when we want to access data from somewhere else OR if we want to store data somewhere else.
+  - The built in JSON object in JS helps us translate a JS object into a JSON object (file).
+  - Use the method JSON.stringify(<object>);
+    - This will convert the object into JSON syntax.
+    - This will NOT convert any functions within our object
+    - JSON.stringify(<object>) returns a string of the JSON syntax of the JS object, which holds data of a specific type.
+  - How do we convert from JSON to an JS object?
+    - use JSON.parse(<JSON_String>);
+- localStorage is used to save values more permanently. 
+  - In the sense of web development, localStorage can be used to keep values even if the webpage is reloaded.
+  - To save a value in localStorage, use:
+    - localStorage.setItem('name_of_var', value);
+      - 'name_of_var' is how will we access this data in local storage later.
+    - local storage can ONLY save strings
+  - To access a value in localStorage, use:
+    - localStorage.getItem('name_of_var');
+  - Because it can only save strings, we need to convert our objects/vars into JSON, using JSON.stringify(<object>);
+  - But then, when we want to save a value into localStorage, and then use it later, we will have to use .getItem(), and convert it back into a regular object, using JSON.parse().
+  - BUT in order to actually use the data saved into localStorage, we have to run the program first regularly so that the og data can get saved into .setItem(), then once that happens set the object you saved equal to JSON.parse(localStorage.getItem('name_of_var'));
+  - In order to reset a value, we can use localStorage.remove('name_of_var').
+  - An item that doesn't exist in local storage will return a null value. 
+  - So essentially, we can utilize this so that when the localStorage does not yet exist, we perform the normal action (if object === null) {re-define object};, and when the program runs again, it'll skip over this and perform using the data from localStorage until we want to reset again.
+  - If you want data that doesn't go away when you refresh, heres how to structure it:
+    - let <object> = JSON.parse(localStorage.getItem(<object>));
+      if (<object> === null)
+      {
+        <object> = {
+          attributes
+        }
+        localStorage.setItem('name_of_var', JSON.stringify(<object>));
+      }
+    - We save it into local storage as a JSON string, then we have to set the object back equal to a JS object by using JSON.parse() when the website continues to run.
+  - If you want to simplify this to the extreme, remember how we learned about truthy and falsy values, well we can use that with the || operator. Essentially, if the left side is false (the object is null because the localStorage is ), the right side (which is the default object assignment), will be done. If the left is true (not null), the local storage will continued to be used.
+    - Ex:
+      - let <object> = JSON.parse(localStorage.getItem('name_of_var')) || {attributes};
+More details about Objects
+- null can be used to intentionally be empty
+- Auto Boxing
+  - JS automatically wraps values into special objects when you set it equal to a function!
+  - So this enables you to use strings, int's, booleans, etc, as objects calling a function.
+  - you can do "hello".length, which returns the length
+  - or you can do "hello".toUpperCase();
+  - 3.toString(); works too! you can use any value with any method.
+  - Auto boxing does not work with null or undefined.
+Objects are references
+    - when an object is created, attributes within it are just references to memory, not an actual value. (we know this)
+    - It just points to memory that says "yea this equals to that"
+    - setting an object equal to another object will make that object point to the other one. Meaning any changes made to object2 will happen to object1, because object2 is a reference to object1.
+      - this is known as copy by reference
+    - Because objects are just references to memory, using const wont actually prevent us from changing the value of an object, however, will prevent us from changing the memory address it is stored in. Be careful!
+    - when comparing objects, you're actually comparing their memory addresses, not the values within, so make sure you're specific.
+    Destructuring 
+      - this is a shortcut that applies when saving to a variable of the same name of an object's attributes.
+      - let {<name>} = <object>;
+        - this is the same as let <name> = object.<name>;
+      - We can use this shortcut for multiple properties
+        - let { <name> <name2> } = <object>; will create two variables of the same name as the object's attributes
+      - just an easier way to get properties (values) out of objects.
+    Shorthand property
+      - within the scope, if you have a variable, you can set that equal to an objects attribute.
+        - attribute : <var> works just fine, just has to be within scope.
+      - But, we can just type the name of the variable in the object, which will create a property equal to the value of the var.
+        - literally just type the name of the var.
+    Shorthand method
+      - An easier way of making a method!
+      - rather than creating <property> : function <name> (){}, we can just do <property_name> () {} which will create a function the same exact way.
+      - just make a function normally now yay.
+
+Document Object Model (DOM)
+- another built in object in JS
+- it is linked to HTML elements.
+- You can set html elements equal to certain values within JS by using the document object
+  - For example, document.title = '<name>'; will change the title's name to whatever you put!
+- The document object represents/models the webpage
+  - Think of it as literally document.<html_element> and you're now accessing/changing the element in real time within JS code.
+- The document object also has methods we can access (talk about later)
+- DOM combines Javascript and HTML together! It gives control to html elements to JS code.
+- The html element is converted into a JS object when using document
+  - This means that document.<html_element> has attributes we can use!
+    - such as document.body.innerHTML
+      - .body is the html element, and .innerHTML is the body's attribute of all the html code within the body.
+        - so when we do document.body.innerHTML = 'whatever';, were replacing everything within the body with 'whatever', so EVERYTHING on the webpage gets replaced.
+        - Printing this out will literally print out everything that is included in the body, such as our <script> code.
+        - Rather than just text, we can actually replace whatever is inside <body> with html code! 
+  - DOM methods
+    - document.querySelector('name_of_html_element') lets us get any element and its content from the page and access it inside JS
+      -it will get the first instance of that element on the page.
+  - How to change only the inside of an html element without replacing everything? Every HTML element has a property .innerHTML, which lets us control the HTML within the element. (use with .querySelector)
+    - .querySelector gives us the whole entire <element>contents</element>, when .innerHTML gives us only what is inside, not the element included.
+    - So by using them together, you can change specific parts of elements without re-writing them
+    - document.querySelector('name_of_element').innerHTML = ''; will change whatever is inside that element to whatever we put.
+      -allows us to change only the parts we need.
+  - What if we have two of the same elements?
+    - How do we change both of them?
+      - Add a class attribute to the element!
+      - Just like in CSS, we target the class by using the dot notation within querySelector
+        - document.querySelector('.name_of_class').innerHTML
+      - It is a common practice to label element's class attributes as "js-<name>" to specify it is for JS use.
+  - HTML elements are simply JavaScript objects (don't forget it), and by using document, we can access them however we want.
+    - This means we can save whatever is inside an HTML object into a JS variable and vice versa.
+  - Remember to use the dot notation to access an specific element
+  - When you do access the innerHTML of an element, make sure there are no unnecessary spaces because the contents will be slightly different than what you want.
+    - So, to work around this, use the function .innerText to retrieve only the text, no spaces.
+Remember to use the attribute onclick= "" in HTML to use JS whenever you click on something.
+If you want to change something you're showing on screen in real time, make sure to constantly use document.querySelector('.class_name').innerHTML = 'whatever'; to update it. You can make this a `` string so that you can update it with JS variables/objects. Simply make an empty html element with a class name and use the document object to update its contents later.
+If you want elements on different lines, just create a new one(div) and update that one using JS, don't try to update everything in one element.
+- To allow for a search bar to actually do something, use document.querySelector('.class_name'); and set a variable equal to this. Set a variable equal to this so you don't have to repeat.
+    - Ex:
+        const input = document.querySelector('.class');
+        let value = input.value;
+    -  However, whenever we get a value from the DOM, its returned as a JS string.
+    - To type cast a string to a number(int), use the JS function called Number(). (String() also does the same but the other way)
+      - If a string only contains a number, and we - * /, JS will automatically  convert it into a number
+  - How do we allow a search bar to automatically enter by just pressing enter?
+  - well we have to use a new element attribute called onkeydown="", which will run any given JS if any key is pressed.
+  -Click and keydowns are known as events, while onclick and onkeydown is known as event listeners. Event listeners run JS when these happen.
+    - Every event listener has an event object, which tells us which key is being pressed in the moment.
+      - Do event.key to obtain what key is being pressed
+        - there are many other attributes event has
+-Window Object
+  - How does this work?
+  - It represents the browser
+    - everything inside the browser is inside the window object
+      - This includes the document object!
+      - The console too
+        - window.console gives us the same thing as console.log
+        - window.console.log === console.log
+      - window.alert() is the same as alert()
+  -Why don't we use the window object
+    - Well because JS creates a shortcut for us (automatically applies window for us)
+
+- How to combine CSS with HTML and Javascript
+  - Well we already know how to use JS and HTML together (DOM and event listeners + code)
+  - Well, how to we apply CSS to all of this (change)
+    - We can use <style> and make css changes to the class names
+      - A good practice is to create a different class name then the JS applied ones for the same element
+        - just do this by adding a space for each class name
+        - Ex:
+          - class= "js-button css-button"
+        - This means an element can have more than one class identifier, but each doing something different!
+  - How do we change the CSS of an element dynamically?
+    - we can use .classList, giving us control of the class attribute
+      - ex:
+        - let element = document.querySelector('.class_name');
+        - element.classList
+      - classList itself is an object, so we can use methods to manipulate it
+        - element.classList.add('class_name');
+      - This means if we define this in the <style> before hand, and we use .add, this css will activate whenever you want.
+      - If you want a css property to override an existing one, well obv make sure it has more than one class identifier and have the one you want to override beneath the original css.
+        - This prevents us from having to retype everything and we can override only certain attributes.
+    - Well, how do we remove a class whenever we want?
+      - we can use .remove!
+        - element.classList.remove('class_name');
+    - Overall, make sure you have all your styles defined beforehand, and activate them at any time with JS using .classList.add and .remove!
+  - Remember, you can straight up write new html code by using .innerHTML, meaning you can add css classes from here too, but this is more for when new elements are added, not when existing elements change their css property.
+Better organizing code
+  - you can create a separate js file using .js ofc and in the <script> element just have the attribute src = "file.js"
+    - <script src="file.js"></script>
+  - The separate js file will only be the code.
+  - you already know how to organize css into a diff file
+
+Arrays and Loops
+- as we know, arrays are another type of value.
+- its a list of values
+- its zero indexed in JS as well
+- use [] to denote is an array!
+- An array in JS can hold ANY value (just like python)
+  - this includes objects as well (and other arrays)
+- An array is a value (as we know 2d arrays)
+- However, the type of an array is an object!
+  - it is an object, but a special type
+- If we really want to check if an array is an array, use :
+  - Array.isArray(<your_array>);
+  - will return t/f 
+- Because an array is an object, it has many different methods and properties we can use
+  - The most important is prob .length
+    - the indices of an array is .length-1
+  - .push() will add a value to the end of an array
+  - .splice() removes a value from an array
+    - it takes in two values
+      - the first is the index we want to remove
+      - the second is the number of values we want to remove (-1)
+        - think of it like substring in java
+        - from the first index, to the second index but not including
+      - so (0,4) will get rid of array values [0]-[3]
+      - (0,1) will get rid of the first value
+
+
+
+
+
+
+
+
+
+
+
+

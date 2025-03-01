@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rock paper scissors</title>
+    <link rel="stylesheet" href="rps.css">
+  </head>
+  <body>
+    <div class="title" style="padding-bottom:10px">
+      Rock Paper Scissors
+    </div>
+    <div class="choices">
+      <button class="rock_button" 
+        onclick="
+        random_num=Math.round(Math.random()*(3-1)+1);
+        rps(random_num, 1);
+        ">
+        <img class="rock_image" src="src/rock-emoji.png">
+      </button>
+      <button class="paper_button"onclick=" 
+      random_num=Math.round(Math.random()*(3-1)+1);
+      rps(random_num, 2);">
+        <img class="paper_image" src="src/paper-emoji.png">
+      </button>
+      <button class="scissors_button"onclick="  
+      random_num=Math.round(Math.random()*(3-1)+1);
+      rps(random_num, 3);">
+        <img class="scissors_image" src="src/scissors-emoji.png">
+      </button>
+    </div>
+    <div>
+      <p class="js-result">
+
+      </p>
+      <p class="js-moves">
+
+      </p>
+      <p class="js-score score">
+
+      </p>
+    </div>
+    <button class="reset" onclick="reset_score();">
+      Reset Score
+    </button>
+    <script src="rps.js"></script>
+  </body>
+</html>

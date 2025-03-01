@@ -1,0 +1,112 @@
+/*This is to edit the appearance of the subscribe button */
+.subscribe-button{
+  background-color: rgb(204, 0, 0);
+  color: white;
+  border: none;
+  border-radius: 2px;
+  font-size:14px;
+  /* to give buttons a more round edge, change the border-radius: the higher
+the pixels, the more round the corners will be. 2 is enough for now*/
+  cursor: pointer;
+  /* to signal that a button is clickable(changing the cursor), we can
+set cursor: pointer */
+  margin-right: 8px;
+  /* You can change the spacing between buttons using margin*/
+  /* We can also change the spacing inside the element using the css box model
+    Specifically, padding*/
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  /*or you can just change it like this
+  padding: 9px 15px;  left is height right is width (i prefer this)*/
+  transition:opacity 0.15s;
+  /*This is used to create a transition time for a certain property to take place*/
+  /*It takes two values, the property and the amount of time*/
+  /*In our case, we want our hover animations to look smooth, so we set
+  the transition of opacity to 0.15 seconds to not look instant, but smooth*/
+  vertical-align:top;
+
+}
+
+/*for hover effects, target the same class, but now class:hover*/
+/*This will only be in place when the cursor hovers over the button*/
+/*This is known as a pseudo-class, only adding extra styles in certain
+situations*/
+.subscribe-button:hover{
+  opacity: 0.7;
+  /*This is a css property that tells us how see-through an html element is*/
+  /*It takes a value from 0-1. 1 being no opacity 0 being completely see thru*/
+}
+/*This is when we click on the button*/
+.subscribe-button:active{
+  opacity:0.5;
+}
+
+.join-button
+{
+  background-color: white;
+  border-color: rgb(6, 82, 189);
+  border-style: solid;
+  /* border-style: solid changed it to have a solid color of blue all around*/
+  border-width: 1px;
+  color: rgb(6,82,189);
+  /* color changes the color of the text itself*/
+  border-radius: 2px;
+  cursor: pointer;
+  margin-right: 8px;
+  font-size: 14px;
+  transition:background-color 0.15s, color 0.15s;
+  /*To transition multiple properties, separate them with a comma*/
+  padding: 9px 15px;
+  vertical-align:top;
+}
+/*When we hover over, the colors reverse, pretty cool*/
+.join-button:hover{
+  background-color:rgb(6, 82, 189);
+  color: white;
+}
+.join-button:active{
+  opacity:0.5;
+}
+.tweet-button
+{
+  background-color: rgb(29, 155, 240);
+  color: white;
+  border-color: rgb(29, 155, 240);
+  border-style: solid;
+  border-radius:50px;
+  cursor: pointer;
+  font-weight: bold;
+  /*if we want it to be bold*/
+  font-size: 15px;
+  transition:box-shadow 0.15s;
+  padding: 7px 14px;
+  vertical-align:top;
+}
+.tweet-button:hover{
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2); 
+  /*If we want it to have a shadow, it requires 3 values and a color*/
+  /*The first value determines the horizontal position of the shadow,
+  the second value determines the vertical position, and the third value
+  determines the blur */
+  /*For more diversity in colors, were using rgba, with "a" being the opacity*/
+  /*Allows for you to make more faded colors easily, with 0 being fully see thru*/
+}
+.tweet-button:active{
+  opacity:0.7;
+}
+
+.welcome{
+  margin-left:80px;
+}
+
+.link{
+  color:rgb(58, 150, 192);
+  transition:color 0.2s;
+}
+
+.link:hover{
+  color:rgb(158, 141, 27);
+}
+

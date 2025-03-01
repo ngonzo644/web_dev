@@ -1,0 +1,90 @@
+What is html/css?
+- html and css are both used to create everything we see on a website
+- html specifically, is a tool to create websites 
+- css stands for cascading style sheets
+- its used to style our html elements
+- the general technique of creating a website's structure is to create elements
+with html, and then style with css one-by-one
+
+DEV TOOLS
+- dev tools can be used to get perfect colors
+- How does this work?
+- right click on an element on any website, and click inspect 
+- where it says html, click on the drop down and you can see all of you html elements,
+including css code.
+- if you click on the element, you can see all the properties it has (including colors)
+- we can do this with any website, meaning we can copy the css properties any website has
+- we can also use the target icon in inspect to click on any element on a website to see its
+properties.
+- However, when looking at colors when inspecting, were given a hex number.
+Hex is basically the same as rgb 
+first two characters represent how red
+the second two represent how green
+and the last two represent how blue
+We can just do hex to rgb calculator with a quick google search
+- You can also click on the computed tab when you have an element selected
+- This will show all the final styes applied to this element
+
+CSS BOX MODEL
+- typically, its not a good idea to just use height and width properties
+when editing an element using css, so we want to change the padding
+- The padding refers to the spacing inside, and can be seen when inspecting and
+looking at the computed tab.
+- This is a better practice because text can overflow an element if the width
+and height are predefined variables.
+- Padding prevents this, and will adjust the element way better.
+- The whole computed tab showcases the css box model, which is how much space
+an element takes up, and how far it is from other elements.
+- Remember, editing the padding will simply change how the element looks like(the size of it)
+- It is mainly used to prevent text from overflowing, if you want overflow, change the width and height
+- So to add padding, you have to account for left, right, top and bottom.
+- You may notice some alignment issues to, and this can be fixed by using
+vertical-align: ; in css. The value given is how you want the element to be
+aligned.
+- Paragraphs by default come with a margin at the top and bottom
+- Margin is the size outside of the element
+
+CSS Specificity 
+- if we have multiple lines setting the same style in css, there is a priority
+ladder
+- The selector that is more specific will have a higher priority in style
+changes
+
+Text element
+- an element inside a line of text of an html element
+- will only effect the line within the text element
+- uses the same html syntax just a different keyword
+- The most useful one is <span></span> because it is the most generic,
+meaning you can create a class tag for it, and set its own unique styles
+for a specific line of text.
+- So, if we want more spaced in between words, we can use <span> and then set
+a specific margin using css.
+- It is an INLINE element, meaning use it within an element!
+
+THE HTML STRUCTURE
+- every html file should start with <!DOCTYPE html>
+and then, enclose the entire html file with
+<html>
+  <head></head>
+  <body></body>
+</html>
+- this is how each html file should be structured
+- as we know, an element within an element is called nesting
+- every html code should either be nested inside the head, or inside the body
+- <body> contains all the elements that are visible on the website
+- <head> contains all the elements not visible on the website
+  - For example, the <title> element changes the websites title name.
+- This structure gives us the ability to automatically update our website.
+- This is done through our live server vscode extension, by right clicking
+on our vscode environment, and pressing open with live server.
+- our css code (<style>) goes into the head element
+- We actually don't need our css and html on the same file,
+and we can separate it by creating a css file with the style's 
+within it. In the css file, only have the properties and not
+<style>. Since our css code is in a different file, we have to use the
+<link> element. This is known as a void element, it does not need a closing tag.
+The <link> element takes in two values, rel and href. rel indicated of what type,
+and href which file. Rel has to be of "stylesheet". 
+
+- The next project, youtube mock, will go over things such as 
+search bars and images!

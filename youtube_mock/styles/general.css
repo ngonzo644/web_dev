@@ -1,0 +1,18 @@
+p{
+  font-family:Roboto, Arial;
+  /*This is a font stack. For whatever reason if roboto fails to load,
+  Arial will be used instead*/
+  margin-top:0;
+  margin-bottom:0;
+  /*This is good practice to get rid of the default margins*/
+}
+
+body{
+  /*The website automatically has a margin of 8px, so the elements arent exactly
+  spaced correctly, do fix this, set the margin to 0 for the body.*/
+  margin:0;
+  padding-top:80px;
+  padding-left:96px;
+  padding-right: 24px;
+  background-color:rgb(250, 246, 246);
+}

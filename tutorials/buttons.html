@@ -1,0 +1,56 @@
+<!-- To use css, we want to create a new element called style-->
+<!-- Inside we will write css code, modifying the appearance of our elements-->
+<!-- We can make changes by doing "property: value;"
+  Semicolons are required-->
+<!-- In css, the element(s) were targeting are called selectors-->
+<!-- Inside the selector, we want to change properties to the left, and
+assign its values to the right-->
+<!-- We can even change the height/width, and px stands for pixels-->
+<!-- we can also change the rgb value by clicking on the box and playing around-->
+<!-- 255, 255, 255 is white, 0,0,0 is black-->
+<!-- To make a style only target a single element, we can use the
+class attribute next to the opening tag. Then, set it equal to what you want
+to label the element as-->
+<!-- In css, if we start our selector with a ".", we can specify the class
+name and change only the given element(s). Multiple elements can have the same
+class attribute.-->
+<!-- Within <style> is going to be all of your css code, meaning you will
+  edit all elements within this.-->
+<!-- Obviously, this works with all other html elements other than buttons-->
+<!-- Most websites, if we hover over a button, its style changes to indicate
+you can click on it-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> 
+      Buttons
+    </title>
+    <link rel="stylesheet" href="buttons.css">
+    <!-- This is needed to open the css file. rel="stylesheet" tells us its of a css type,
+    and href="file.css" tells us which file-->
+  </head>
+  <body>
+    <button class="subscribe-button">
+      SUBSCRIBE
+    </button>
+    
+    <button class="join-button">
+      JOIN
+    </button>
+    
+    <button class="tweet-button">
+      Tweet
+    </button>    
+
+    <p class="welcome">
+      Welcome to buttons
+    </p>
+    
+    <a href="https://www.amazon.com/s?k=buttons&crid=2J48PYFCL3TCL&sprefix=buttons%2Caps%2C135&ref=nb_sb_noss_1" target="_blank" class="link">
+      Click here to find out more
+    </a>
+  </body>
+</html>
+
+
+

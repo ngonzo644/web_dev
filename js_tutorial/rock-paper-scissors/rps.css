@@ -1,0 +1,51 @@
+body{
+  background-color:rgb(25, 25, 25);
+  color:white;
+  font-family:Arial;
+  padding-bottom:300px;
+}
+.title{
+  margin-top:40px;
+  font-weight:bold;
+  font-size:30px;
+}
+.reset{
+  padding:8px 10px;
+  background-color:white;
+  border:white;
+  color:black;
+}
+
+.choices{
+  display:flex;
+  flex-direction:row;
+}
+.rock_button, .paper_button, .scissors_button
+{
+  margin-top:15px;
+  background-color:rgb(25,25,25);
+  border-radius:310px;
+  border-style:solid;
+  border-width:3px;
+  border-color:white;
+  cursor:pointer;
+  margin-right:18px;
+}
+.rock_button .rock_image, .paper_button .paper_image, .scissors_button .scissors_image{
+  height:50px;
+  padding:30px;
+}
+
+.image{
+  height:50px;
+}
+
+.js-result{
+  margin-top:50px;
+  margin-bottom:50px;
+  font-weight:bold;
+  font-size:25px;
+}
+.score{
+  margin-top:50px
+}

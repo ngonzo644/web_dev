@@ -1,0 +1,342 @@
+  When we set the width of an img, the height will also adjust
+
+  object-fit: cover;
+  This is needed if the image stretches due to its dimensions, it will try 
+  to fit the img, but crop out some parts. Cover is used to fit within the dimensions,
+  causing some parts to be cropped out. While contain is used to fit the entire image,
+  making it smaller within the dimensions
+
+  object-position: _;
+  This tells us which part of the image we want to see, mostly used when we have object-fit:cover;
+
+  - to make an image a circle, make the width and height the same,
+  and then set the border-radius to 100px, object-fit:cover, and object-position:center;
+
+  - to make an image rectangular, set the width larger than the height, object-fit:cover;,
+  and object-position: center;
+
+  CSS display property 
+  -  sometimes you may realize some elements appear next to each-other, rather
+  than on top of each-other when displayed.
+  - for example, images and search boxes(<input>) both appear on the same line
+  - This is due to the display property in css.
+  - In html, there are 3 types of elements
+  - 1. Block element
+      - A block element takes up the entire line
+      - a paragraph by default is a block element
+  - 2. Inline-block element
+      - only takes up as much space needed
+  - 3. Inline element
+      - appear only in a line of text
+      - such as <span>
+- We can use a css property called display to easily switch between block to inline block
+- for the selected block element, do display: inline-block;
+- This will make it so that they are now next to each-other(on the same line),
+rather than on separate lines
+- This works the other way around as well, with display:block; changing an inline-block
+to take up the whole line, rather than just how much space it takes.
+- The display property makes it very easy to make things on the same line, or on different lines
+- In css, you can change multiple elements by separating them with a comma on the 
+specifier line.
+
+<div> element
+- stands for division
+- its just a box
+- so many websites use it
+- it is also a block element
+- Why is it so useful? It can contain any other elements within it.
+- They are meant to be containers, allowing to group a bunch of elements together 
+all on the same page.
+- So basically, just put every element you want that is to be contained in a single
+space into a <div> block, and edit the css code as before, with each class name.
+- divs are so useful because we can change the properties of everything within it, rather
+than one by one!
+- This means we can have multiple divs on a single line!
+- block elements actually only take up the entire line within a container
+- However, divs by default are block elements, so be careful and make sure 
+to change them to inline.
+
+You can have multiple elements under the same class number(including divs),
+so that when you change one, you change all of them.
+Remember, to align elements, do vertical-align:position;
+This is very useful when it comes to div elements on a page
+
+Nested Layouts Technique
+- There are two types of layouts.
+  - 1. Vertical layouts ----
+  - 2. Horizontal layouts ||
+- By using a combination of these, we can make anything we need to on a website
+- For example, inside our video_preview div, there are vertical layouts within vertical layouts
+within horizontal layouts. 
+- The initial div itself is a horizontal layout.
+- Elements within a div either take up vertical or horizontal space, and that 
+is how we layout our website
+- To create a vertical layout, make multiple div elements within the div, and
+have the contents within the vertical layout within each div
+- To create a horizontal layout, make a div within the vertical div, however,
+these div elements will be inline-block, meaning they do not take up the whole
+space of the div.
+- Divs are automatically block elements, meaning creating a div within a div
+makes it vertical, while making a div within a div within a div that's inline,
+makes it horizontal.
+- So break everything up into vertical layouts, and then within the vertical 
+layouts, break everything up into either horizontal or vertical layouts.
+This will keep on going and going into you're done!
+- To make each element fit within their layout, change their widths
+
+CSS Grid
+- A better way to make horizontal layouts as well as to create a Grid
+to layout all elements on a page.
+- If you remember, we were making our horizontal layouts by creating a div 
+and changing its display to inline-block.
+- However, inline-block has some alignment problems when it comes to changing
+the widths of divs that are changed into inline.
+- A unique way of writing css code is to add a tag to an element
+called 'style' and setting it equal to what you want to change
+- This is called inline-styles
+- Just a reminder, a div by itself is vertical (block)
+- A grid is a layout with rows (horizontal) and columns(vertical)
+- a 2d array basically 
+- to create this, set the outermost div's display to grid, and change the 
+grid-template-columns: px px 
+- Within this div, have whatever other divs
+- When a block element(default div) is placed within a grid div, it only takes up
+the space within the grid's column. There is also no extra space between divs
+within a grid
+- Grids will overall align elements much better.
+The number of values within grid-template-columns will create more columns with
+the more px values given.
+- The columns can be of varying widths!
+- Whenever you have more div elements than the specified column amount,
+the div will wrap around into a new row of the grid
+- In grids you can set a column width, and then use a value called fr (free space)
+- This means that column will take up all the free space that it can take
+if its a block element, then it will take up the line.
+- fr is very useful for resizing dynamically on a web page.
+- The number in front of fr (usually 1) tells us how much of the 
+remaining space it will take up. It is like a ratio.
+- So now you don't have to individually change each div to inline, but
+rather when theres multiple elements next to each-other, make a grid and 
+change their widths using px and fr.
+- setting all the columns to fr will create an equal amount of space for
+them when resizing the page
+- you can also change the height of each div so that it takes up more space
+within its column
+- To add more space to a website, you can change the style of the body, and add
+padding-bottom: px; 
+- how do we create space between column and rows?
+- use the properties column-gap: and row-gap:
+
+FlexBox:
+- Is similar to CSS Grid
+- Can create a similar layout, but more flexible
+- Just like a grid, flexbox requires an outer div that contains divs 
+that contains elements.
+- The first step is to set the css property to display: flex;, then set
+the flex-direction:row;. This means we will align these elements within
+the flex box in a horizontal row
+- A div element will automatically behave like an inline-block within a 
+flex box, taking up only as much space as it needs to.
+- if we add more elements to the divs within the flex box, vertical alignment
+will be maintained.
+- You can have a div in a flexbox take up the remaining space on a page
+by setting the css property flex: 1; It is the equivalent to 1 fr in grid.
+Flex: 2 is the equivalent of 2 fr, it will take up more of the remaining 
+space.
+- The layout for grids is more rigid than flexbox, this is because for grid
+you are defining the grid-template-columns: before you even define the divs
+that go in each of them. Meaning, the div elements need to be in the correct
+column position to have the correct defined spacing, making it more rigid.
+- However, with flexbox, if you change the layout of the div elements, the
+spacing will dynamically change with what you define for them either using flex
+or width, as compared to the div elements having to be in the right spot
+to have to defined spacing.
+Flexbox: flexible layout
+Grid: rigid layout
+Flexbox vs Grid, which one do i use?
+- Use a grid if you are certain these elements will always be in a 
+specific order no matter what
+- Use flexbox if these elements may dynamically change depending on certain
+circumstances. (4 icons might become 3 if a person is logged out)
+
+- more flexbox tips
+- To change the alignment of the elements within a flexbox, you can change
+justify-content: ;
+- Setting it to space-between spaces out the elements in the horizontal space
+and make sure there is an equal amount of space between each element
+- To change their vertical spacing, change the property align-items: ;.
+- So basically, create the outermost div, make it a flex box, and then,
+change the width's/flex of the div elements within it to create the perfect
+spacing.
+
+A good practice is to separate each section of css properties into a new
+'styles' folder, and import those style files (that are separated by section)
+into the html file.
+Anything that targets every html property, put it into a new 'general.css' file
+
+How do we limit the width of an element after the webpage reaches a certain width?
+use the property max-width: px;
+
+Nested Flexbox
+- you can turn an element within a flexbox element into a flexbox by
+just turning the display:flex once again. 
+- From there, you can change the properties of this nested flexbox so that
+it can look more aligned and whatnot.
+- We have to do this because the first layer of flexbox does not effect 
+every single layer of divs within it.
+- flex-direction:row is default btw!
+- one weird behavior of flex-box is that it will resize certain elements
+to fit within it if there is not enough space.
+- to prevent this shrinking, set the property flex-shrink: 0;
+- If you set an element to flex:1;, so that it can dynamically shrink/grow
+to the pages size, you will notice it will stop shrinking at a certain width.
+To stop this, set the width:0; so it can shrink to as small as possible.
+You already know how to change the max-width to grow to a certain extent!
+
+CSS position
+- Helps us keep certain elements visible while scrolling on a website
+- Whenever we see an element on top of another element, it uses css position
+- Basically adds another dimension to our page.
+- To edit it, edit the property position:.
+- Position:static is the default property.
+- Position: fixed allows us to make an element that will be on the page no
+matter what.
+- The position property has 4 special properties to move the element around
+- top: px sets the margin from the top of the webpage.
+- left, right, and bottom will all do the same.
+- If we set these in opposition  directions, the element will stretch.
+- ex: left:50px right:50px will stretch the element to fit in these margins.
+- However, setting these properties will resize them with the page.
+- In order to go around this, set the height and width so that this
+doesn't happen.
+- However, you can also see that some elements are being covered by the
+fixed element, so to fix this, we want to always have space on the desired
+section of the page.
+- We can use padding-top:px on the body element to do so.
+- A good way of thinking of css position is that we are making elements
+"float", so an element will appear transparent at first went setting it to
+fixed, so make sure to set the background color of a fixed element!
+- You can set border's at any direction! (btw)
+- top, bottom, right and left are so that it dynamically changes with the 
+page, and height and width are used so that the size of it doesn't change!
+- use padding to move elements from underneath fixed elements.
+
+Position absolute and relative
+- position:absolute will take in the same top bottom right left / height
+width values but behave a bit differently.
+- One key difference is that position:fixed places the element in the browser
+window, while position:absolute will place it on the page.
+- When we scroll the page, a position:fixed element will not move because
+its placed on the browser window, not the page.
+-However, for a absolute element, it will move when scrolling.
+- Generally, an element written below in html will appear in front of the
+element on the webpage.
+- We can override this using the property z-index: which determines which
+elements appear in-front and behind. The default value is 0. By changing it
+to 1, were setting the priority of it higher, and the element with a higher
+z-index will appear in-front.
+- Position:absolute elements aren't rly used on its own much when creating
+websites, so its key purpose is to use it within a position:fixed div.
+- So now all the directional properties apply within the fixed div's dimensions
+- This makes it really easy to place certain elements within an established
+dimension in a specific position. (such as corners)
+- In the youtube example, we can see that elements in specific locations
+do not just apply to position:fixed divs, so that is where position:relative
+comes into play.
+- Position:relative does not change anything of the targeted element, instead
+it allows for position:absolute divs to be placed in the relative dimensions
+of the div.
+- It will be positioned on the element, not the page.
+- So set an element to position:relative to be able to place elements
+of position:absolute within its relative space.
+- Remember, if an element is written below another element, it will have priority
+and appear first (on top). In order to change the priority, you have to change the
+z-index:. So change the z-index:1 to the element you want to appear on top.
+- However, this does not apply to position:static (which is default),
+position static will always appear in the back. So make sure to change the 
+z-index; (you can put any number just make sure its higher than 0)
+
+-Remember, to position position:absolute, you can use negative values to go
+'out of bounds'
+- So to go further in the direction you want it to, set the value to negative
+for the desired direction.
+
+Final notes and tips!
+-Rather than setting a class for each element, for example the images on the
+sidebar, we can use a new css technique.
+- To target a specific element that is within a class name (a div), 
+all you have to do is .class_name <element> and it will target all of the
+desired elements within the class.
+- Remember, flex-direction:row is default, so elements within a flexbox will
+appear next to eachother horizontally, so to have them on top of eachother,
+set it to column.
+- If you want to change how the websites general style looks like (changing
+the padding so theres extra spacing), make sure to edit the .body in a 
+general.css file.
+- Css classes are nested, so that means you can specify it uses .class .nested
+to make things easier !
+- You can also target multiple classes by using a comma, and the same type of
+specifying we've been using. This makes it so much easier to target multiple things.
+
+- How do we make things appear when we hover over a certain element?
+- Its very simple! first, create the element as you would normally, and then
+set its opacity to 0. Then, as we know, we can use specifiers to target
+when we hover over the element, so do .class:hover and within it set the
+opacity to 1. However, you may see that as you hover over the disappearing 
+element, that its appearing even when its supposed to only appear when hovering
+over a certain element. To get rid of this, set pointer-events:none;
+- Remember to use transition so that the opacity transition looks smooth.
+transition: <style> <s> ;
+
+-To make a line of words take up one line, set white-space:nowrap;
+- You can make anything on ur page go to a different website by just wrapping
+it in an <a> element, and then setting the href to the website.
+
+-Responsive Design
+  - making the website look as good as possible on every screen size
+  - you will need to use a media query
+  - use @media (css property)
+  - then inside this, are all the css properties in effect once the css property
+  in the () is true. This is essentially an if statement, and inside it you 
+  put css code, including the classifiers.
+  - This is usefully for screen size because you can do if the screen's size
+  is a minimum/maximum of x amount of pixels, change the layout. Use maximum
+  for a lower amount, and minimum for a higher amount.
+  - a good practice is too set the maximum, then the in-between, then the minimum.
+  This "in-between" will be a combo of your max and mins (one greater and one less),
+  and here you will set the style for how it will look like on an ideal browser
+  size. Use @media () and () this time!.
+
+  CSS shorthand properties
+  - y'know how padding has directions you can edit, well you can just use 
+  padding: , and 2 values is for top/bottom and left/right, and 1 value is
+  for both, and 4 values is to set each value clockwise.
+  - same thing for margin, and border.
+  - For border, you can use border: width style color. 
+  
+  Inheritance
+  - There is inheritance in html and css!
+  - Setting a certain property of a div surrounding other elements means that
+  this property will get passed on to the inside elements.
+  - However, of course, not all properties are affected by inheritance, such
+  as border, display, etc.
+  - But the most important style inherited are font styles, so instead of
+  changing the font every time, change the font of the outermost div!
+  - If you want everything on your entire webpage to have a certain property,
+  go into your general.css file and change the body{}, which contains all of
+  our visible elements.
+  - There is also a priority to the inheritance, meaning a inner div's style
+  will have more priority to the outer div's style, which is css specificity.
+
+  Semantic elements
+  - these types of elements, such as <header> or <nav> work the same as a div
+  but have a special meaning to screen readers, search engines, and anything 
+  reading our webpage. 
+  - <header> is a header, and <nav> is something that helps us navigate a website
+  (such as a sidebar). 
+  - The only use of semantic elements is so that robots reading our website know
+  what they're looking at
+  - There is also <main>, which should contain our main contents of a website,
+  like videos and whatnot.
+  - inside our main is our <section> of our <main> content. In our case, our
+  video_grid is a section within our main.

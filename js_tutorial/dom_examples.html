@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Document object notation examples</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  </head>
+  <body>
+    <div style = "padding-top: 8px;padding-bottom: 15px; font-family:Arial; ">
+      YouTube Subscribe Button
+    </div>
+    <button class= 'js-subscribe subscribe' onclick = "
+     let change = document.querySelector('.js-subscribe');
+     document.querySelector('.js-subscribe').innerText=check(change);
+     ">
+       Subscribe
+    </button>
+    <div>
+      <p>Amazon Shipping Calculator</p>
+      <p>Orders under $40 = + $10 shipping</p>
+      <p>Orders over $40 = FREE shipping</p>
+      <div class="calculate">
+        <input class = "js-search_bar bar" type="text" placeholder="Cost of order" onkeydown="if(event.key==='Enter'){calculate_total();}">
+        <button class="calc" onclick = "calculate_total();">Calculate</button>
+      </div>
+      <p class="result"></p>
+      <p>Rock Paper Scissors</p>
+      <a href="http://127.0.0.1:5500/js_tutorial/rock_paper_scissors.html" target="_blank">Click here</a>
+    </div>
+    <style>
+      body{
+        font-family: Arial;
+        padding-bottom:500px;
+      }
+      .subscribe{
+        margin-left:15px;
+        padding: 10px 15px; 
+        border-radius:20px; 
+        border: black; 
+        background-color:black;
+        color:white;
+        cursor: pointer; 
+        font-weight:bold;
+        margin-bottom:30px;
+      }
+
+      .is_subscribed{
+        background-color: rgb(239, 238, 238);
+        color:black;
+      }
+
+      .bar{
+        padding: 10px;
+        font-family: Arial;
+        font-size:15px;
+      }
+      .calc
+      {
+        background-color:green;
+        color:white;
+        padding:12px 15px;
+        border:green;
+        margin-left:4px;
+        font-size:15px;
+        cursor:pointer;        
+      }
+
+      .calculate{
+        display:flex;
+        flex-direction:row;
+        justify-content:left;
+        margin-bottom:50px;
+      }
+
+    </style>
+    <script>
+      function check(button)
+      {
+        if (button.innerText==='Subscribe')
+        {
+          button.classList.add('is_subscribed');
+          return 'Subscribed';
+        }
+        else
+        {
+          button.classList.remove('is_subscribed');
+          return 'Subscribe';
+        }
+      }
+      function calculate_total()
+      {
+        const input = document.querySelector('.js-search_bar');
+        let value= Number(input.value);
+        if (value > 40)
+        {
+          document.querySelector('.result').innerText=`$${value}`;
+        }
+        else
+          value=value+10;
+          document.querySelector('.result').innerText=`$${value}`;
+      }
+
+
+
+    </script>
+  </body>
+</html>

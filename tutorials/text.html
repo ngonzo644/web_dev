@@ -1,0 +1,43 @@
+<!-- Going over how to use css to change the styles of text elements in html-->
+<!-- You can easily use a quick google search "how to change/add _ in css"
+to see what to use-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="text.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <!-- Go to google fonts, pick out one you want, and copy and paste the
+      code into the head. Then in the css file, use the name of the font!-->
+  </head>
+  <body>
+    <!-- Remember to add a class name to change this specific paragraph-->
+    <p class="video_title">
+      Talking Tech and AI with Google CEO Sundar Pichai!
+    </p>
+
+    <p class="video_stats">
+      3.4M views &#183; 6 months ago
+      <!-- The special blue text is an html entity, which is any special 
+      character than can't be normally typed out. To find out its value, just 
+    search up html entity for _ and write out the value with a semicolon;-->
+    </p>
+
+    <p class="video_author">
+      Marques Brownie &#10003;
+    </p>
+
+    <p class="video_des">
+      Talking tech and AI on the heels of Google I/O. Also a daily driver phone reveal from Google's CEO. Shoutout to Sundar!
+    </p>
+
+    <p class="apple">
+      Shop early for the best selection of holiday favourites. <span class ="shop">Shop now &#62;</span>
+      <!-- You want to be careful with any special characters, an just stick with
+      the html entity value-->
+    </p>
+  </body>
+</html>
+
+

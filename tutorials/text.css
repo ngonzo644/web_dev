@@ -1,0 +1,59 @@
+p{
+  font-family: Roboto;
+  margin-top:0px;
+  margin-bottom:0px
+}
+/*To have something apply to a certain element(in our case paragraphs)
+specify it and add the changes inside*/
+/*A good practice is to set the margin's to 0 because of the defaults in place*/
+
+/*Remember to use . to specify what you want to change*/
+.video_title{
+  /*To change the type of font, use font-family: ;*/
+  font-size: 18px;
+  font-weight:bold;
+  /* If we want the text to flow onto a second line, then we can use width
+  The smaller the width, the more overflow we get*/
+  width: 300px;
+  line-height: 24px;
+  /* line-height will change the spacing between words from top to bottom*/
+  margin-bottom:5px;
+  /* If we want to change how far apart the paragraphs are, we have to change the margin*/
+}
+.video_stats{
+  font-size: 14px;
+  color: rgb(96,96,96);
+  /*The margin is changed here again to ensure the spacing is right*/
+  margin-bottom:20px;
+}
+.video_author{
+  color: rgb(96,96,96);
+  font-size: 14px;
+  margin-bottom:21px;
+}
+.video_des{
+  color: rgb(96,96,96);
+  font-size: 14px;
+  width: 275px;
+  line-height: 22px;
+  margin-bottom:100px;
+}
+
+.apple{
+  font-size: 14px;
+  background-color: rgb(227,65,64);
+  color:white;
+  padding: 18px 18px;
+  /* height by width */
+  text-align:center;
+}
+/*As you can see here, we gave the "Shop now" portion of the sentence
+its own unique style*/
+.shop{
+  cursor:pointer;
+  /*Remember, this automatically applies when hovering, so dont put it
+  under hovering again*/
+}
+.shop:hover{
+  text-decoration:underline;
+}
