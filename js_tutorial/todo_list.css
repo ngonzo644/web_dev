@@ -1,0 +1,33 @@
+.final-search, .date-input{
+  margin-top:15px;
+  padding: 6px;
+  font-size:15px;
+}
+.final-add{
+  font-size:15px;
+  color: white;
+  background-color: green;
+  border-style:solid;
+  border-color:green;
+  cursor:pointer;
+}
+.final-list .final-todo .delete{
+  border-style: solid;
+  background-color: red;
+  color: white;
+  border-color:red;
+  font-size:15px;
+  cursor:pointer;
+}
+.final-todo, .final-list .starting {
+  display:grid;
+  grid-template-columns: 200px 150px 100px;
+  column-gap: 10px;
+  row-gap:10px;
+}
+.final-list .starting{
+  margin-bottom:10px;
+}
+.final-list{
+  font-family:Arial;
+}
