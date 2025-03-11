@@ -386,6 +386,18 @@ Arrays and Loops
   - for loops are the exact same too!
 - to create html as a JS variable, you can treat it as a string with the `` type, and then using document.querySelector('.class_name').innerHTML = var;, you can create a dynamic element that will update.
   - this means you can set HTML elements on your page dynamically that will have spaces in between them
+  - you can use loops and arrays with this!
+- Note for css 
+  - when adding padding, no commas are needed to differentiate height/width
+  - to make a search bar a date, use 'type="date"' to do so.
+- Remember some of those shorthand stuff for objects? its pretty useful
+  - you can declare objects on the fly (to group values together) by just doing {<name1>: value1, <name2>: value2};
+  - However, if you just put the variable and don't create a new name for it, it will just create an object attribute with the name of the local var
+    - ex:
+      {name, date}; will just create an object with attributes name and date (and whatever was in the local variables)
+  -Object destructuring 
+    - you can do let {name} = obj; and it will pull out an attributes name and save it into a local var of the same name!
+    
 
 
 
