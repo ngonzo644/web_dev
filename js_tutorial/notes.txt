@@ -380,6 +380,13 @@ Arrays and Loops
       - so (0,4) will get rid of array values [0]-[3]
       - (0,1) will get rid of the first value
  - Remember, in order to use DOM, your html element needs a class tag to it
+- How to use loops?
+  - while loops are how you expect
+  - scope ofc is a factor in JS as well.
+  - for loops are the exact same too!
+- to create html as a JS variable, you can treat it as a string with the `` type, and then using document.querySelector('.class_name').innerHTML = var;, you can create a dynamic element that will update.
+  - this means you can set HTML elements on your page dynamically that will have spaces in between them
+
 
 
 
