@@ -397,7 +397,8 @@ Arrays and Loops
       {name, date}; will just create an object with attributes name and date (and whatever was in the local variables)
   -Object destructuring 
     - you can do let {name} = obj; and it will pull out an attributes name and save it into a local var of the same name!
-    
+- To have elements dynamically update on your page, make sure whenever you have an onclick that it also runs an update function that will reset the html based on your JS variables (use dom innerHTML and `` strings to literally just write HTML code in JS and update your page based on that)
+
 
 
 

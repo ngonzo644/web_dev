@@ -52,11 +52,12 @@ function display_todo()
   let todoHTML = '';
   for(let i=todoList.length-1; i>=0; i--)
   {
-    let html = `<p>${todoList[i].name} ${todoList[i].dueDate}
-    <button class="delete">
+    let html = `
+    <div>${todoList[i].name}</div>
+    <div> ${todoList[i].dueDate}</div>
+    <button class="delete" onclick="del_todo(${i});">
       Delete
-    </button>
-    </p>`;
+    </button>`;
     todoHTML += html;
   }
   document.querySelector('.final-todo').innerHTML=todoHTML;

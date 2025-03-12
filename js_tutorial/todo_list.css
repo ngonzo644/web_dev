@@ -1,9 +1,9 @@
-.final-search, .date-input{
-  margin-top:15px;
-  padding: 6px;
+.final-search, .date-input, .final-add{
+  margin-top: 10px;
   font-size:15px;
+  padding: 10px 15px;
 }
-.final-add{
+.final-list .starting .final-add{
   font-size:15px;
   color: white;
   background-color: green;
@@ -12,6 +12,7 @@
   cursor:pointer;
 }
 .final-list .final-todo .delete{
+  padding:10px 15px;
   border-style: solid;
   background-color: red;
   color: white;
@@ -22,6 +23,7 @@
 .final-todo, .final-list .starting {
   display:grid;
   grid-template-columns: 200px 150px 100px;
+  align-items:center;
   column-gap: 10px;
   row-gap:10px;
 }
