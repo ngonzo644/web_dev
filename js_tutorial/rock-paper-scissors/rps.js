@@ -103,3 +103,21 @@ function rps(random_n, user_num)
 
   localStorage.setItem('score', JSON.stringify(user));
 }
+let intervalId=null;
+function auto_play()
+{
+  if (!intervalId)
+  {
+    intervalId = setInterval(function(){
+      let user_random_num=Math.round(Math.random()*(3-1)+1);
+      let comp_random_num=Math.round(Math.random()*(3-1)+1);
+      rps(user_random_num, comp_random_num);}, 2000);
+
+    document.querySelector('.auto-button').innerText="Stop Play";
+  }
+  else{
+    clearInterval(intervalId);
+    intervalId=null;
+    document.querySelector('.auto-button').innerText="Auto Play";
+  }
+}
