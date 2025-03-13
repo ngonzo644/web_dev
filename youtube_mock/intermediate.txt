@@ -165,6 +165,7 @@ justify-content: ;
 - Setting it to space-between spaces out the elements in the horizontal space
 and make sure there is an equal amount of space between each element
 - To change their vertical spacing, change the property align-items: ;.
+  - stretch, center, left, right, etc. 
 - So basically, create the outermost div, make it a flex box, and then,
 change the width's/flex of the div elements within it to create the perfect
 spacing.
