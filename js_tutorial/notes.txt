@@ -398,6 +398,74 @@ Arrays and Loops
   -Object destructuring 
     - you can do let {name} = obj; and it will pull out an attributes name and save it into a local var of the same name!
 - To have elements dynamically update on your page, make sure whenever you have an onclick that it also runs an update function that will reset the html based on your JS variables (use dom innerHTML and `` strings to literally just write HTML code in JS and update your page based on that)
+- Arrays are references 
+  - Arrays don't actually hold the value, but a reference to a memory address where the value is stored
+  - so setting an array equal to each other just makes them point to the same memory address (does NOT give them same values)
+    - this makes it so that changing one will change both
+  - to avoid this, we can use the .slice() method to make a copy of the values
+    - so let arr2 = arr1.slice(); will do so
+- Destructuring shortcut
+  - Normally, we get values out of an array into a var like var = arr[i];
+  - HOWEVER, JS allows for much easier referencing 
+  - If you want to save a variable based on their ordering you can:
+    - let [<name_of_first_var>] = arr; 
+      - this will save the first value in arr and save it into a variable that you specified
+      - if you keep adding variable names, it will save the second index into the second variable, the third, the fourth, and so on
+      - Ex:
+        - let [<name1>, <name2>, <name3>] = arr ; will save indexes 0, 1, and 2 into the variables in that order
+- The keywords break and continue also exist in JS
+  - break will exit out of a loop immediately and continue on the next line of code after
+  - continue will skip an iteration and keep on running the loop (loop control var is incremented)
+- ofc you can use loops in functions as well (and use return as a way of breaking out of the loop as well)
+
+Advanced Functions
+- functions are values (so we can have vars of type function)
+- note: function parameters do not have types because JS doesn't have explicitly defined types
+  - we can save a function inside a variable!
+  - Ex:
+    - let <var> = function <name>() { <lines of code> };
+  - The value of var itself will literally be the function
+  - So to run the actual code, we have to do <var>();
+  - Because of this, the <name> that defines the function isn't actually needed at all, which is known as an anonymous function (function w/o a name)
+  - This is actually the longer version of something we already do, which is function <name>() {<code>};
+  - It is not recommended to use the var definition when creating variables
+    - This is because the shortcut we already know and love is easier to read and allows for hoisting
+      - Hoisting means we can call our function at any time in our code (before and after) as long as our function is defined properly
+      - Without hoisting, we have to define functions at the top of our code
+        - Hoisting does not work when defining functions with vars
+  - Because a function is a value, we can save functions into objects (as we all know and love)
+    - To do so, just do:
+      - let obj = {<name1>: function <name2>(){<code>}};
+      - And call it by doing obj.<name1>();
+      - However, as we know, we don't even need to define <name2> and we can just save it as an anonymous function
+  - As we all know, we can pass values into functions
+    - But because we just learned functions are values in JS, we can pass functions into functions as well.
+      - so we can define a function like so:
+        - function <name>(<param>) { param(); } <name>(function() {<code>});
+        - This will run the code defined in the function passed in as a parameter
+        - The function passed in is called a 'call-back' function
+- setTimeout()
+  - Allows us to use a function after a certain amount of time
+  - It takes 2 parameters: 
+    - the first is the function we want to run in the future
+    - the second is how long to wait before running this function
+      - this is a number in milliseconds 
+        - 1000 ms = 1 second
+  - However, it doesn't actually wait the time, meaning the rest of the program will run and the timeout function will run once the time is up.
+  - Timeout does not freeze our program for x amount of seconds
+- Asynchronous code
+  - The computer will not wait for a line to finish before going to the next line
+  - only when using setTimeout();
+- Synchronous code
+  - The computer will wait for one line to finish before going to the next line
+  - line by line
+  - Everything we have written, excluding setTimeout(), is synchronous code
+- setInterval()
+  - Takes the same 2 parameters of setTimeout()
+  - However, it will run the function every x amount of milliseconds
+  - This is also asynchronous 
+  
+
 
 
 
