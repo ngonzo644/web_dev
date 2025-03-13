@@ -464,8 +464,23 @@ Advanced Functions
   - Takes the same 2 parameters of setTimeout()
   - However, it will run the function every x amount of milliseconds
   - This is also asynchronous 
+- How to set an auto feature on a website, that can be turned off and on?
+  - setInterval() will return an id that can be used to verify on or off
+  - Basically, if intervalId does not have a value (=null or !), run setInterval with the function defined in the first parameter 
+    - ex:
+      let intervalId=null
+      - if (!intervalId)
+        intervalId=setInterval(function(){
+        <code>
+        }; ms); 
+        else {
+          clearInterval(intervalId);
+          intervalId=null;
+        }
+    - use clearInterval(<id_you_got>) to stop the Interval
+      - this is ran once the intervalId has a value in in, and will be checked next time the function is ran (next time onclick is pressed)
+      - the first time the function is ran, the intervalId does not have a value, so the setInterval is ran
   
-
 
 
 
