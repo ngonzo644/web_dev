@@ -106,8 +106,10 @@ function rps(random_n, user_num)
 let intervalId=null;
 function auto_play()
 {
+  // if its null (auto play is not on)
   if (!intervalId)
   {
+    // setInterval requires a function to be ran, and a time, so we can quickly define a function in the parameters 
     intervalId = setInterval(function(){
       let user_random_num=Math.round(Math.random()*(3-1)+1);
       let comp_random_num=Math.round(Math.random()*(3-1)+1);
