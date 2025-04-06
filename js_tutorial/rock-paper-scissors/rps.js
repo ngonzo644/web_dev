@@ -110,7 +110,7 @@ function auto_play()
   if (!intervalId)
   {
     // setInterval requires a function to be ran, and a time, so we can quickly define a function in the parameters 
-    intervalId = setInterval(function(){
+    intervalId = setInterval(() => {
       let user_random_num=Math.round(Math.random()*(3-1)+1);
       let comp_random_num=Math.round(Math.random()*(3-1)+1);
       rps(user_random_num, comp_random_num);}, 2000);
