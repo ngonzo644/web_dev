@@ -4,7 +4,14 @@
     <title>Advanced Functions</title>
   </body>
   <head>
+    <button class="practice">
+      Click
+    </button>
     <script>
+      const button_element = document.querySelector(".practice");
+
+      button_element.addEventListener("click", () => {console.log("click"); });
+
       /*
       function greeting(){
         console.log('hello');
@@ -47,6 +54,7 @@
 
       //setInterval(function(){console.log('Interval');}, 3000);
 
+      /*
       [
       "make dinner", "wash dishes", "watch yt"
       ].forEach(function(value, index){
@@ -75,6 +83,7 @@
       const oneLine = () => 2+3;
 
       console.log(oneLine());
+      */
 
     </script>
   </head>
