@@ -42,6 +42,7 @@
 // we will use a forEach loop to loop thru each objects easily, and to use a function as a parameter
 
 import {cart} from '../data/cart.js';
+import {products} from '../data/products.js';
 
 let productsHTML = "";
 
