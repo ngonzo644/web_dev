@@ -41,7 +41,7 @@
 
 // we will use a forEach loop to loop thru each objects easily, and to use a function as a parameter
 
-import {cart} from '../data/cart.js';
+import {cart, addToCart} from '../data/cart.js';
 import {products} from '../data/products.js';
 
 let productsHTML = "";
@@ -100,37 +100,25 @@ products.forEach( (products) => {
 });
 
 document.querySelector(".js-products-grid").innerHTML = productsHTML;
+
+function calcCart()
+{
+  let totalQuant= 0;
+
+  cart.forEach((cartItem)=>{
+    totalQuant += cartItem.quantity;
+  })
+
+  document.querySelector(".js-cart-quantity").innerHTML = totalQuant;
+
+}
+
 document.querySelectorAll(".js-add-to-cart").forEach((button) => {
   button.addEventListener("click", ()=>{
     const productId = button.dataset.productId;
 
-    let matchingItem;
-
-    cart.forEach((item)=> {
-      if(productId === item.productId)
-      {
-        matchingItem = item;
-      }
-    })
-
-    if (matchingItem)
-    {
-      matchingItem.quantity += 1;
-    }
-    else
-    {
-    cart.push({
-      productId: productId,
-      quantity: 1
-    })
-    }
-    let totalQuant= 0;
-
-    cart.forEach((item)=>{
-      totalQuant += item.quantity;
-    })
-
-    document.querySelector(".js-cart-quantity").innerHTML = totalQuant;
+    addToCart(productId);
+    calcCart();
 
   })
 })
