@@ -1,8 +1,8 @@
-import {cart} from '../data/cart.js';
+import {cart, removeFromCart} from '../data/cart.js';
 import {products} from '../data/products.js';
 import {formatCurrency} from '../scripts/utils/money.js';
 
-
+ 
 let cartSummaryHTML = '';
 
 cart.forEach( (cartItem) => {
@@ -40,7 +40,7 @@ cart.forEach( (cartItem) => {
           <span class="update-quantity-link link-primary">
             Update
           </span>
-          <span class="delete-quantity-link link-primary">
+          <span class="delete-quantity-link link-primary js-delete-link" data-product-id="${matchingProduct.id}">
             Delete
           </span>
         </div>
@@ -99,3 +99,12 @@ cart.forEach( (cartItem) => {
 })
 
 document.querySelector('.js-order-summary').innerHTML = cartSummaryHTML;
+
+document.querySelectorAll('.js-delete-link').forEach((link)=>{
+  link.addEventListener('click', () => {
+      const productId = link.dataset.productId;
+      // this function creates a new cart array, and checks if this product id matches with the og. If it does, do not include it in the new array. The new array becomes the official array
+      removeFromCart(productId);
+  })
+}
+)
