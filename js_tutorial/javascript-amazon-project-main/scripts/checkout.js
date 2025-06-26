@@ -17,7 +17,8 @@ cart.forEach( (cartItem) => {
       }
     })
 
-    cartSummaryHTML += `<div class="cart-item-container">
+    cartSummaryHTML += `<div class="cart-item-container 
+    js-cart-item-container-${matchingProduct.id}">
     <div class="delivery-date">
       Delivery date: Tuesday, June 21
     </div>
@@ -105,6 +106,9 @@ document.querySelectorAll('.js-delete-link').forEach((link)=>{
       const productId = link.dataset.productId;
       // this function creates a new cart array, and checks if this product id matches with the og. If it does, do not include it in the new array. The new array becomes the official array
       removeFromCart(productId);
+
+      const container = document.querySelector(`.js-cart-item-container-${productId}`);
+      container.remove();
   })
 }
 )
